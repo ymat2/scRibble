@@ -2,14 +2,18 @@ install.packages("pak")
 
 pkgs = c(
   "devtools", 
-  "tidyverse", 
-  "Rcpp",
   "BiocManager", 
-  "patchwork", 
+  "clusterProfiler",
+  "ggbiplot",
   "ggpubr", 
   "ggtree", 
+  "ggvenn",
+  "ggVennDiagram",
+  "patchwork", 
   "phytools", 
-  "clusterProfiler",
+  "Rcpp",
+  "tidyverse", 
+  "VennDiagram",
   "ymat2/myrrr"
 )
 
