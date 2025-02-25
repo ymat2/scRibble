@@ -87,3 +87,24 @@ piris |> adjust_legend_position("inside") + ggplot2::theme(legend.justification 
 piris |> adjust_legend_position("inside") + ggplot2::theme(legend.justification = c(0, 1))
 piris |> adjust_legend_position("inside") + ggplot2::theme(legend.justification = c(1, 1))
 
+
+# subsetting
+
+gene_exp = dplyr::tibble(
+  gene_name = stringr::str_c("gene", seq(1, 3000), sep = "_"),
+  exp_A = rgamma(n = 3000, shape = 5),
+  exp_B = rgamma(n = 3000, shape = 5),
+  ) |>
+  dplyr::mutate(
+    mean_exp = (exp_A + exp_B)/2, 
+    logfc = log(exp_A/exp_B)
+)
+
+gene_exp |>
+  tidyplot(x = mean_exp, y = logfc) |>
+  add_data_points() |>
+  add_data_points(data = filter_rows(logfc > 1), color = "darkred") |>
+  add_data_points(data = filter_rows(logfc < -1), color = "darkblue") |>
+  add_data_labels_repel(data = max_rows(logfc, n = 3), label = gene_name, color = "black") |>
+  add_data_labels_repel(data = min_rows(logfc, n = 3), label = gene_name, color = "black") |>
+  adjust_size(width = 100, height = 100)
