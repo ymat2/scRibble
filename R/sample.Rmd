@@ -1,0 +1,16 @@
+---
+title: "Sample Rmd for knitr"
+---
+  
+## Markdown
+  
+This is a plain text.
+
+## Code chunk
+
+```{r}
+library(tidyverse)
+ggplot(mpg) + aes(displ, cty) + geom_point()
+```
+
+**Hello, world!**
