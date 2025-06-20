@@ -9,6 +9,7 @@ pkgs = c(
   "ggtree",
   "ggvenn",
   "ggVennDiagram",
+  "languageserver",
   "OptM",
   "org.Gg.eg.db",
   "org.Hs.eg.db",
@@ -18,6 +19,7 @@ pkgs = c(
   "TCC",
   "tidyverse",
   "VennDiagram",
+  "writexl",
   "ymat2/myrrr"
 )
 
