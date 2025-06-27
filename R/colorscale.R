@@ -19,7 +19,7 @@ p12 = dplyr::tibble(x = seq(1, 12), y = 1, fill = letters[1:12]) |>
   theme(legend.position = "none")
 
 
-## default descrete color scales
+## default descrete color scales -----------------------------------------------
 
 p12 + scale_fill_brewer(palette = "Set3")
 p8 + scale_fill_brewer(palette = "Set2")
@@ -55,7 +55,7 @@ p9 + scale_fill_viridis_d(option = "G")
 p9 + scale_fill_viridis_d(option = "H")
 
 
-## Color codes
+## Color codes -----------------------------------------------------------------
 
 RColorBrewer::brewer.pal(n = 12, name = "Set3")
 RColorBrewer::brewer.pal(n = 8, name = "Set2")
@@ -82,14 +82,58 @@ palette.colors(palette = "Polychrome 36")
 palette.colors(palette = "Alphabet")
 
 
-## As table
+## As table --------------------------------------------------------------------
 
 prefix="<span style='font-size:1.2rem; color:"
 suffix=";'>&#9632;</span>"
-dplyr::tibble(code = viridis::viridis(n = 9, option = "E")) |>
+dplyr::tibble(code = viridisLite::viridis(n = 9, option = "E")) |>
   dplyr::mutate(color = stringr::str_c(prefix, code, suffix)) |>
   knitr::kable()
 
 palette.colors(palette = "Okabe-Ito")
-viridis::viridis(n = 9, option = "D")
-viridis::viridis(n = 9, option = "E")
+viridisLite::viridis(n = 9, option = "D")
+viridisLite::viridis(n = 9, option = "E")
+
+
+## Custom colorscale -----------------------------------------------------------
+
+scale_color_oi = function() {
+  ggplot2::scale_color_discrete(type = palette.colors(palette = "Okabe-Ito")[-1])
+}
+
+scale_fill_nature = function() {
+  colors = c(
+    "#D56363",
+    "#5E97CF",
+    "#E5C449",
+    "#C4C1A4",
+    "#97A0B3",
+    "#C4C400",
+    "#66B33F",
+    "#59BCBC",
+    "#B478B4",
+    "#EC963D",
+    "#B99577"
+  )
+  scale_fill_manual(values = colors)
+}
+
+scale_color_ms = function() {
+  colors = c(
+    "#44546A",
+    "#4472C4",
+    "#ED7D31",
+    "#A5A5A5",
+    "#FFC000",
+    "#5B9BD5",
+    "#70AD47"
+  )
+  ggplot2::scale_color_manual(values = colors)
+}
+
+p11 + scale_fill_nature()
+
+ggplot(mpg) +
+  aes(cty, hwy) +
+  geom_point(size = 2, aes(color = class)) +
+  scale_color_ms()
