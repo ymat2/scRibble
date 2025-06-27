@@ -10,6 +10,7 @@ pkgs = c(
   "ggvenn",
   "ggVennDiagram",
   "languageserver",
+  "magick",
   "OptM",
   "org.Gg.eg.db",
   "org.Hs.eg.db",
