@@ -14,11 +14,13 @@ pkgs = c(
   "OptM",
   "org.Gg.eg.db",
   "org.Hs.eg.db",
+  "org.Mm.eg.db",
   "patchwork",
   "phytools",
   "Rcpp",
   "TCC",
   "tidyverse",
+  "tuneR",
   "VennDiagram",
   "writexl",
   "ymat2/myrrr"
