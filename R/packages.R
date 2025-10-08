@@ -26,4 +26,4 @@ pkgs = c(
   "ymat2/myrrr"
 )
 
-pak::pkg_install(pkgs, upgrade = FALSE)
+pak::pkg_install(pkgs, upgrade = TRUE)
