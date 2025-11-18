@@ -3,6 +3,7 @@ install.packages("pak")
 pkgs = c(
   "devtools",
   "BiocManager",
+  "biomaRt",
   "clusterProfiler",
   "ggbiplot",
   "ggpubr",
