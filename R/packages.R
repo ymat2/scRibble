@@ -19,12 +19,14 @@ pkgs = c(
   "patchwork",
   "phytools",
   "Rcpp",
+  "seewave",
   "systemfonts",
   "TCC",
   "tidyverse",
   "tuneR",
   "VennDiagram",
   "writexl",
+  "ymat2/GRCg7br",
   "ymat2/myrrr"
 )
 
