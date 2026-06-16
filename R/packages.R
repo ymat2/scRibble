@@ -26,7 +26,7 @@ pkgs = c(
   "tuneR",
   "VennDiagram",
   "writexl",
-  "ymat2/GRCg7br",
+  "ymat2/grcg7br",
   "ymat2/myrrr"
 )
 

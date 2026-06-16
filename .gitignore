@@ -1,4 +1,6 @@
 images/*
 tmp/*
-.Rproj.user
+*.Rproj
+*.Rproj.user
 .Rhistory
+.positai
